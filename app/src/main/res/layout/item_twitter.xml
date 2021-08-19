@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cvImageUser"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNameUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/cvImageUser"
+        app:layout_constraintTop_toTopOf="@id/cvImageUser"
+       android:text="Nome do úsuario" />
+
+    <TextView
+        android:id="@+id/tvLoginUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/grey_text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvNameUser"
+        app:layout_constraintEnd_toStartOf="@+id/ivMore"
+        app:layout_constraintStart_toEndOf="@+id/tvNameUser"
+        app:layout_constraintTop_toTopOf="@id/tvNameUser"
+        android:text="loginuser"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/tvNameUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvNameUser"
+        app:srcCompat="@drawable/ic_more_vert" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Lorem ipsum curae convallis libero habitasse cubilia eu, sodales tellus ultricies maecenas justo vel elit ipsum, pellentesque ac luctus hendrerit ante arcu. dapibus eget elit egestas curabitur sociosqu euismod justo gravida phasellus nisi odio vitae ante rhoncus sociosqu,"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvNameUser"
+        app:layout_constraintTop_toBottomOf="@id/tvNameUser" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivComment"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/tvDescription"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        app:srcCompat="@drawable/ic_comment" />
+
+    <TextView
+        android:id="@+id/tvNumberComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="508"
+        app:layout_constraintBottom_toBottomOf="@+id/ivComment"
+        app:layout_constraintStart_toEndOf="@id/ivComment"
+        app:layout_constraintTop_toTopOf="@id/ivComment" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRetwetter"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivComment"
+        app:layout_constraintStart_toEndOf="@id/tvNumberComment"
+        app:layout_constraintTop_toTopOf="@id/ivComment"
+        app:srcCompat="@drawable/ic_retweetar" />
+
+    <TextView
+        android:id="@+id/tvNumberRetwetar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="4.995"
+        app:layout_constraintBottom_toBottomOf="@+id/ivComment"
+        app:layout_constraintStart_toEndOf="@id/ivRetwetter"
+        app:layout_constraintTop_toTopOf="@id/ivComment" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLike"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivComment"
+        app:layout_constraintStart_toEndOf="@id/tvNumberRetwetar"
+        app:layout_constraintTop_toTopOf="@id/ivComment"
+        app:srcCompat="@drawable/ic_health" />
+
+    <TextView
+        android:id="@+id/tvNumberLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="4.995"
+        app:layout_constraintBottom_toBottomOf="@+id/ivComment"
+        app:layout_constraintStart_toEndOf="@id/ivLike"
+        app:layout_constraintTop_toTopOf="@id/ivComment" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivShare"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivComment"
+        app:layout_constraintStart_toEndOf="@id/tvNumberLike"
+        app:layout_constraintTop_toTopOf="@id/ivComment"
+        app:srcCompat="@drawable/ic_share" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
