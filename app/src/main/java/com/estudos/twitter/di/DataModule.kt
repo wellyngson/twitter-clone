@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -46,7 +47,7 @@ object DataModule {
     // Koin module to provide some items of interest to us
     private fun repositoryModule(): Module {
         return module {
-            single<UserRepository> { UserRespositoryImpl(service = get()) }
+            single<UserRepository> { UserRespositoryImpl(context = androidContext(), service = get()) }
         }
     }
 
