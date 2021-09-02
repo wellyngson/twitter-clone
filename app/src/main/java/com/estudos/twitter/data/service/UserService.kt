@@ -10,8 +10,8 @@ import retrofit2.http.Query
 interface UserService {
 
     @GET("tweets/search/recent?&tweet.fields=author_id,public_metrics")
-    suspend fun getTweets(@Query("query") query: String): Response<DataTweet>
+    suspend fun getTweets(@Query("query") query: String): DataTweet
 
     @GET("users/{authorId}")
-    suspend fun getUserById(@Path("authorId") authorId: String): Response<DataUser>
+    suspend fun getUserById(@Path("authorId") authorId: String): DataUser
 }

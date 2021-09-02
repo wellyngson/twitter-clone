@@ -1,4 +1,4 @@
-package com.estudos.twitter.data.di
+package com.estudos.twitter.di
 
 import com.estudos.twitter.core.Constants
 import com.estudos.twitter.core.Constants.TOKEN_API

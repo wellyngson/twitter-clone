@@ -1,6 +1,6 @@
-package com.estudos.twitter.domain.di
+package com.estudos.twitter.di
 
-import com.estudos.twitter.domain.usecase.UserUseCase
+import com.estudos.twitter.domain.UserUseCase
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
 import org.koin.dsl.module

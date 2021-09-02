@@ -1,4 +1,4 @@
-package com.estudos.twitter.presentation.ui
+package com.estudos.twitter.ui.mainactivity
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.estudos.twitter.R
 import com.estudos.twitter.data.model.Tweet
 import com.estudos.twitter.databinding.ItemTwitterBinding
+import com.estudos.twitter.ui.detailsuser.DetailsUser
 
 class UserAdapter : ListAdapter<Tweet, UserAdapter.UserViewHolder>(DiffCallback()) {
 
@@ -28,14 +29,14 @@ class UserAdapter : ListAdapter<Tweet, UserAdapter.UserViewHolder>(DiffCallback(
         private val binding: ItemTwitterBinding = ItemTwitterBinding.bind(itemView)
 
         fun bindViewHolder(tweet: Tweet) {
-            binding.tvDescription.text = tweet.text
-            binding.tvNumberLike.text = tweet.complementsTweet.like_count.toString()
-            binding.tvNumberRetwetar.text = tweet.complementsTweet.retweet_count.toString()
-            binding.tvNumberComment.text = tweet.complementsTweet.quote_count.toString()
+            binding.tvDescription.text = tweet.textTweet
+            binding.tvNumberLike.text = tweet.complementsTweet.likeCount.toString()
+            binding.tvNumberRetwetar.text = tweet.complementsTweet.retweetCount.toString()
+            binding.tvNumberComment.text = tweet.complementsTweet.quoteCount.toString()
 
             itemView.setOnClickListener {
                 val intent = Intent(it.context, DetailsUser::class.java).apply {
-                    putExtra("authorId", tweet.author_id.toString())
+                    putExtra("authorId", tweet.idUser.toString())
                 }
                 it.context.startActivity(intent)
             }
@@ -45,5 +46,5 @@ class UserAdapter : ListAdapter<Tweet, UserAdapter.UserViewHolder>(DiffCallback(
 
 class DiffCallback : DiffUtil.ItemCallback<Tweet>() {
     override fun areItemsTheSame(oldItem: Tweet, newItem: Tweet) = oldItem == newItem
-    override fun areContentsTheSame(oldItem: Tweet, newItem: Tweet) = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: Tweet, newItem: Tweet) = oldItem.idTweet == newItem.idTweet
 }

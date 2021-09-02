@@ -4,41 +4,36 @@ import android.util.Log
 import com.estudos.twitter.data.model.DataTweet
 import com.estudos.twitter.data.model.DataUser
 import com.estudos.twitter.data.service.UserService
-import retrofit2.Response
 
 class UserRespositoryImpl(
     private val service: UserService
 ) : UserRepository {
 
-    override suspend fun getTwitterById(searchTwitter: String): Response<DataTweet> {
-        var response: Response<DataTweet>
-        var responseDataUser: Response<DataUser>
+    override suspend fun getTwitterById(searchTwitter: String): DataTweet {
+        var responseListTweets: DataTweet
+        var dataUser: DataUser
 
         return try {
-            response = service.getTweets(searchTwitter)
+            responseListTweets = service.getTweets(searchTwitter)
 
-            response.body()?.responseApi?.forEach {
-                val authorId = it.author_id.toString()
-                responseDataUser = service.getUserById(authorId)
+            responseListTweets.listTweets.forEach {
 
-                /*
-                Confirmation of user data consumed by the API,
-                but the insertion of data within the Tweet object
-                is missing. Another consumption of user data was done on the details page.*/
-                Log.e(
-                    "${responseDataUser.body()?.user?.name}",
-                    "${responseDataUser.body()?.user?.username}"
-                )
+                dataUser = service.getUserById(it.idUser.toString())
+
+                Log.e("${dataUser.user.name}", "${dataUser.user.username}")
+
+//                it.dataUser.user.name = dataUser.user.name
+//                it.dataUser.user.username = dataUser.user.name
             }
 
-            response
+            responseListTweets
         } catch (exception: Exception) {
             throw Exception(exception.message)
         }
     }
 
-    override suspend fun getUserById(authorId: String): Response<DataUser> {
-        var response: Response<DataUser>
+    override suspend fun getUserById(authorId: String): DataUser {
+        var response: DataUser
 
         return try {
             response = service.getUserById(authorId)

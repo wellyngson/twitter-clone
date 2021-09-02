@@ -1,9 +1,8 @@
-package com.estudos.twitter.presentation.ui
+package com.estudos.twitter.ui.detailsuser
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.estudos.twitter.databinding.ActivityDetailsUserBinding
-import com.estudos.twitter.presentation.viewmodel.DetailsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailsUser : AppCompatActivity() {

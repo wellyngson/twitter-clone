@@ -1,7 +1,7 @@
-package com.estudos.twitter.presentation.di
+package com.estudos.twitter.di
 
-import com.estudos.twitter.presentation.viewmodel.DetailsViewModel
-import com.estudos.twitter.presentation.viewmodel.MainViewModel
+import com.estudos.twitter.ui.detailsuser.DetailsViewModel
+import com.estudos.twitter.ui.mainactivity.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module

@@ -1,4 +1,4 @@
-package com.estudos.twitter.presentation.ui
+package com.estudos.twitter.ui.mainactivity
 
 import android.os.Bundle
 import android.widget.Toast
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.estudos.twitter.databinding.ActivityMainBinding
-import com.estudos.twitter.presentation.viewmodel.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupObservables() {
         viewModel.tweetLiveDataTweet.observe(this, {
-            adapter.submitList(it.responseApi)
+            adapter.submitList(it.listTweets)
         })
     }
 }

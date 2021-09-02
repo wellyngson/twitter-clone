@@ -1,9 +1,9 @@
 package com.estudos.twitter
 
 import android.app.Application
-import com.estudos.twitter.data.di.DataModule
-import com.estudos.twitter.domain.di.DomainModule
-import com.estudos.twitter.presentation.di.PresentationModule
+import com.estudos.twitter.di.DataModule
+import com.estudos.twitter.di.DomainModule
+import com.estudos.twitter.di.PresentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

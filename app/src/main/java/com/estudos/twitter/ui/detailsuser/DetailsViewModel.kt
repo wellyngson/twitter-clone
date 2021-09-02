@@ -1,11 +1,11 @@
-package com.estudos.twitter.presentation.viewmodel
+package com.estudos.twitter.ui.detailsuser
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.estudos.twitter.data.model.DataUser
-import com.estudos.twitter.domain.usecase.UserUseCase
+import com.estudos.twitter.domain.UserUseCase
 import kotlinx.coroutines.launch
 
 class DetailsViewModel(
@@ -18,7 +18,7 @@ class DetailsViewModel(
     fun getUser(authorId: String) {
         viewModelScope.launch {
             val response = userUseCase.executeUser(authorId)
-            useMutableLiveData.postValue(response.body())
+            useMutableLiveData.postValue(response)
         }
     }
 }
