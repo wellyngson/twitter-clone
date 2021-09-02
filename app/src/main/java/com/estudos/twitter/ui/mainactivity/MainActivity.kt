@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvRecyclerView.addItemDecoration(
             DividerItemDecoration(
                 this,
-                DividerItemDecoration.HORIZONTAL
+                DividerItemDecoration.VERTICAL
             )
         )
         binding.rvRecyclerView.layoutManager =

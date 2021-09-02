@@ -84,10 +84,11 @@
         android:id="@+id/ivRetwetter"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="28dp"
         app:layout_constraintBottom_toBottomOf="@+id/ivComment"
         app:layout_constraintStart_toEndOf="@id/tvNumberComment"
         app:layout_constraintTop_toTopOf="@id/ivComment"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_retweetar" />
 
     <TextView
