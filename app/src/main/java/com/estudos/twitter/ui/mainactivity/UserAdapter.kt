@@ -29,6 +29,8 @@ class UserAdapter : ListAdapter<Tweet, UserAdapter.UserViewHolder>(DiffCallback(
         private val binding: ItemTwitterBinding = ItemTwitterBinding.bind(itemView)
 
         fun bindViewHolder(tweet: Tweet) {
+            binding.tvNameUser.text = tweet.name
+            binding.tvLoginUser.text = tweet.username
             binding.tvDescription.text = tweet.textTweet
             binding.tvNumberLike.text = tweet.complementsTweet.likeCount.toString()
             binding.tvNumberRetwetar.text = tweet.complementsTweet.retweetCount.toString()
@@ -36,7 +38,7 @@ class UserAdapter : ListAdapter<Tweet, UserAdapter.UserViewHolder>(DiffCallback(
 
             itemView.setOnClickListener {
                 val intent = Intent(it.context, DetailsUser::class.java).apply {
-                    putExtra("authorId", tweet.idUser.toString())
+                    putExtra("singleTweet", tweet)
                 }
                 it.context.startActivity(intent)
             }

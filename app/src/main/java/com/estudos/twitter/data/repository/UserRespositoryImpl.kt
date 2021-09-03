@@ -24,10 +24,15 @@ class UserRespositoryImpl(
                 responseListTweets.listTweets.forEach {
                     dataUser = service.getUserById(it.idUser.toString())
 
+                    // Implementar a adicao no banco de dados
+
                     Log.e("${dataUser.user.name}", "${dataUser.user.username}")
 
-//                it.dataUser.user.name = dataUser.user.name
-//                it.dataUser.user.username = dataUser.user.name
+                    it.name = dataUser.user.name
+                    it.username = dataUser.user.username
+
+                    Log.e("${it.name}", "${it.username}")
+
                 }
 
                 responseListTweets

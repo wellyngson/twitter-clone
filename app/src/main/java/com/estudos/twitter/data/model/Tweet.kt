@@ -10,7 +10,8 @@ data class Tweet(
     val textTweet: String,
     @SerializedName("author_id")
     val idUser: Long,
-    @SerializedName("public_metrics")   
+    @SerializedName("public_metrics")
     val complementsTweet: ComplementsTweet,
-    val dataUser: DataUser
+    var name: String,
+    var username: String
 ) : Serializable

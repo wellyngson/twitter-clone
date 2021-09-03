@@ -16,28 +16,32 @@
 
     <TextView
         android:id="@+id/tvNameUser"
-        android:layout_width="0dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        tools:text="Nome do úsuario"
+        android:maxLines="1"
+        android:gravity="start"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/cvImageUser"
-        app:layout_constraintTop_toTopOf="@id/cvImageUser"
-       android:text="Nome do úsuario" />
+        app:layout_constraintTop_toTopOf="@id/cvImageUser" />
 
     <TextView
         android:id="@+id/tvLoginUser"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:textColor="@color/grey_text"
-        android:textSize="18sp"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:gravity="right"
         app:layout_constraintBottom_toBottomOf="@id/tvNameUser"
         app:layout_constraintEnd_toStartOf="@+id/ivMore"
         app:layout_constraintStart_toEndOf="@+id/tvNameUser"
         app:layout_constraintTop_toTopOf="@id/tvNameUser"
-        android:text="loginuser"/>
+        tools:text="loginuser"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivMore"
@@ -55,7 +59,7 @@
         android:layout_marginTop="8dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="Lorem ipsum curae convallis libero habitasse cubilia eu, sodales tellus ultricies maecenas justo vel elit ipsum, pellentesque ac luctus hendrerit ante arcu. dapibus eget elit egestas curabitur sociosqu euismod justo gravida phasellus nisi odio vitae ante rhoncus sociosqu,"
+        tools:text="Lorem ipsum curae convallis libero habitasse cubilia eu, sodales tellus ultricies maecenas justo vel elit ipsum, pellentesque ac luctus hendrerit ante arcu. dapibus eget elit egestas curabitur sociosqu euismod justo gravida phasellus nisi odio vitae ante rhoncus sociosqu,"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvNameUser"
@@ -75,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="508"
+        tools:text="508"
         app:layout_constraintBottom_toBottomOf="@+id/ivComment"
         app:layout_constraintStart_toEndOf="@id/ivComment"
         app:layout_constraintTop_toTopOf="@id/ivComment" />
@@ -88,7 +92,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/ivComment"
         app:layout_constraintStart_toEndOf="@id/tvNumberComment"
         app:layout_constraintTop_toTopOf="@id/ivComment"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_retweetar" />
 
     <TextView
@@ -116,7 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="4.995"
+        tools:text="4.995"
         app:layout_constraintBottom_toBottomOf="@+id/ivComment"
         app:layout_constraintStart_toEndOf="@id/ivLike"
         app:layout_constraintTop_toTopOf="@id/ivComment" />
@@ -125,9 +128,8 @@
         android:id="@+id/ivShare"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/ivComment"
-        app:layout_constraintStart_toEndOf="@id/tvNumberLike"
+        app:layout_constraintEnd_toEndOf="@+id/tvDescription"
         app:layout_constraintTop_toTopOf="@id/ivComment"
         app:srcCompat="@drawable/ic_share" />
 
