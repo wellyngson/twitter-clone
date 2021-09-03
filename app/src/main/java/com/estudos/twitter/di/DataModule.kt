@@ -47,7 +47,12 @@ object DataModule {
     // Koin module to provide some items of interest to us
     private fun repositoryModule(): Module {
         return module {
-            single<UserRepository> { UserRespositoryImpl(context = androidContext(), service = get()) }
+            single<UserRepository> {
+                UserRespositoryImpl(
+                    context = androidContext(),
+                    service = get(),
+                    dao = get())
+            }
         }
     }
 

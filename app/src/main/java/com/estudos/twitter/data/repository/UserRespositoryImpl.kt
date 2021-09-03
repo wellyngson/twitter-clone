@@ -1,16 +1,17 @@
 package com.estudos.twitter.data.repository
 
 import android.content.Context
-import android.util.Log
 import android.widget.Toast
 import com.estudos.twitter.core.Utils
+import com.estudos.twitter.data.dao.TweetDao
 import com.estudos.twitter.data.model.DataTweet
 import com.estudos.twitter.data.model.DataUser
 import com.estudos.twitter.data.service.UserService
 
 class UserRespositoryImpl(
     private val context: Context,
-    private val service: UserService
+    private val service: UserService,
+    private val dao: TweetDao
 ) : UserRepository {
 
     override suspend fun getTwitterById(searchTwitter: String): DataTweet {
@@ -24,15 +25,10 @@ class UserRespositoryImpl(
                 responseListTweets.listTweets.forEach {
                     dataUser = service.getUserById(it.idUser.toString())
 
-                    // Implementar a adicao no banco de dados
-
-                    Log.e("${dataUser.user.name}", "${dataUser.user.username}")
-
                     it.name = dataUser.user.name
                     it.username = dataUser.user.username
 
-                    Log.e("${it.name}", "${it.username}")
-
+                    dao.save(it)
                 }
 
                 responseListTweets
@@ -44,8 +40,8 @@ class UserRespositoryImpl(
             Toast.makeText(context, "Sem internet", Toast.LENGTH_LONG).show()
 
             // use breakpoint on line 43 to not see the lack of internet condition, because right after the application it will break
-            responseListTweets = service.getTweets(searchTwitter)
-            return responseListTweets
+//            responseListTweets = service.getTweets(searchTwitter)
+            return dao.getAll()
         }
     }
 
