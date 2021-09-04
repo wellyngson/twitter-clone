@@ -14,5 +14,5 @@ interface TweetDao {
     fun save(tweet: Tweet)
 
     @Query("SELECT * FROM Tweet")
-    fun getAll(): DataTweet
+    fun getAll(): List<Tweet>
 }

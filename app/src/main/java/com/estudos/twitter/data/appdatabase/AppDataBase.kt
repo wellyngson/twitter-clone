@@ -4,13 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.estudos.twitter.data.model.DataTweet
+import com.estudos.twitter.data.dao.TweetDao
 import com.estudos.twitter.data.model.Tweet
 
 @Database(entities = [Tweet::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract val dataTweet: DataTweet
+    abstract val tweetDao: TweetDao
 
     companion object {
         // @Volatile indicates that this instance will always work in main memory, never via cache

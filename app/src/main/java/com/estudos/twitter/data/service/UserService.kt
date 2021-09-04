@@ -2,7 +2,6 @@ package com.estudos.twitter.data.service
 
 import com.estudos.twitter.data.model.DataTweet
 import com.estudos.twitter.data.model.DataUser
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

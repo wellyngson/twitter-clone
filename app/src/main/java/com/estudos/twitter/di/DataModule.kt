@@ -2,6 +2,7 @@ package com.estudos.twitter.di
 
 import com.estudos.twitter.core.Constants
 import com.estudos.twitter.core.Constants.TOKEN_API
+import com.estudos.twitter.data.appdatabase.AppDatabase
 import com.estudos.twitter.data.repository.UserRepository
 import com.estudos.twitter.data.repository.UserRespositoryImpl
 import com.estudos.twitter.data.service.UserService
@@ -19,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object DataModule {
 
     fun load() {
-        loadKoinModules(networkModules() + repositoryModule())
+        loadKoinModules(networkModules() + repositoryModule() + daoModule())
     }
 
     // Koin module to provide some items of interest to us
@@ -53,6 +54,12 @@ object DataModule {
                     service = get(),
                     dao = get())
             }
+        }
+    }
+
+    private fun daoModule(): Module {
+        return module {
+            single { AppDatabase.getDatabase(androidContext()).tweetDao}
         }
     }
 

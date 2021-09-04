@@ -1,14 +1,14 @@
 package com.estudos.twitter.domain
 
-import com.estudos.twitter.data.model.DataTweet
 import com.estudos.twitter.data.model.DataUser
+import com.estudos.twitter.data.model.Tweet
 import com.estudos.twitter.data.repository.UserRepository
 
 class UserUseCase(
     private val repository: UserRepository
 ) {
 
-    suspend fun execute(searchTwitter: String): DataTweet {
+    suspend fun execute(searchTwitter: String): List<Tweet> {
         return repository.getTwitterById(searchTwitter)
     }
 

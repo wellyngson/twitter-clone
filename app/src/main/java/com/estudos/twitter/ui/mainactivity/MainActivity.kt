@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupObservables() {
-        viewModel.tweetLiveDataTweet.observe(this, {
-            adapter.submitList(it.listTweets)
+        viewModel.listTweet.observe(this, {
+            adapter.submitList(it)
         })
     }
 }
