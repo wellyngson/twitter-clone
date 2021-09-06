@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">@color/blue_twitter</item>
         <item name="colorOnPrimary">@color/blue_twitter</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondary">@color/blue_twitter</item>
         <item name="colorSecondaryVariant">@color/blue_twitter</item>
         <item name="colorOnSecondary">@color/blue_twitter</item>
         <!-- Status bar color. -->

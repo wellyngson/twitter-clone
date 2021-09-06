@@ -39,20 +39,19 @@ class UserRespositoryImpl(
 
                     withContext(Dispatchers.IO) {
                         listTweet.add(it)
-                        val
                         dao.save(it)
                     }
                 }
 
-                // Colocar a função do dao numa corrotina
-                Log.e("Size: ", "${dao.getAll().size}")
                 listTweet
             } catch (exception: Exception) {
                 throw Exception(exception.message)
             }
         } else {
             Toast.makeText(context, "Sem internet", Toast.LENGTH_LONG).show()
-            return dao.getAll()
+            return withContext(Dispatchers.IO) {
+                dao.getAll()
+            }
         }
     }
 
